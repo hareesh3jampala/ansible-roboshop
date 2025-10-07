@@ -4,8 +4,8 @@
   vars:
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-06a59f598939788f4
-    zone_id: Z07655122ST5S48TYJ3HK
-    domain_name: hareesh3jampala.in
+    zone_id: "Z07655122ST5S48TYJ3HK"
+    domain_name: "hareesh3jampala.in"
     instances:
     - mongodb
   tasks: 
@@ -16,10 +16,10 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
       tags:
-        name: "{{ item }}"
+        Name: "{{ item }}"
     loop: "{{ instances }}"
     register: ec2_output
 
-  - name: print the output
+  - name: print the ec2_output
     ansible.builtin.debug:
       msg: "{{ ec2_output }}"
