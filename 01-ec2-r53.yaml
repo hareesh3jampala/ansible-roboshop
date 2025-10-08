@@ -6,11 +6,12 @@
     sg_id: sg-06a59f598939788f4
     zone_id: "Z07655122ST5S48TYJ3HK"
     domain_name: "hareesh3jampala.in"
-    instances:
-    - mongodb
-    - redis
-    - mysql
-    - rabbitmq
+    # we can pass instances through command line using -e
+    # instances:
+    # - mongodb
+    # - redis
+    # - mysql
+    # - rabbitmq
   tasks: 
   - name: create ec2 instance
     amazon.aws.ec2_instance:
